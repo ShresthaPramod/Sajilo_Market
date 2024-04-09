@@ -1,0 +1,18 @@
+{% comment %} {% extends 'market/base.html' %} {% endcomment %}
+{% block title %} Here is your ! SignUp Form  {% endblock %}
+{% block content %}
+<div>
+    <h2 class="center"> Sign up! </h2>
+</div>
+
+<form method="post" action=".">
+    {% csrf_token %}
+
+    
+    {{ form.as_p }}
+    
+
+    <button>Submit</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+<html>
+    <head>
+
+        <title>{% block title %}{% endblock %}| Marketplace</title>
+        <style>
+            .center {
+                text-align: center;
+                float:center;
+                
+            }
+            .right {
+                text-align: right;
+                float: right;
+            }
+            .container {
+                display: grid;
+                align-items: center; 
+                grid-template-columns: 1fr 1fr 1fr;
+                column-gap: 5px;
+               }
+               
+               img {
+                 max-width: 250%;
+                 max-height:250%;
+               }
+               
+               .text {
+                font-size: 20px;
+            
+                margin-left: 500px; 
+               }
+               .box {
+                border: 2px solid #000;
+                padding: 10px;
+                border-radius: 5px;
+                width: fit-content;
+                margin: 0 auto;
+               
+            }
+            a {
+                text-decoration: none;
+                color: blue;
+            }
+            
+        </style>
+    </head>
+        <body>
+            <nav>
+                <a href ="/" >Sajilo Market</a>
+                <P><b><h3> Nepal Best second Hand Market</h3></b></p>
+                <div class="box">
+                    <a href ="{% url 'item:new' %}"> Post For Free</a>
+                   
+        
+                </div>
+                <div class="right">
+                    <b><a href ="{% url 'market:signup' %}" > Sign Up</a><b>
+               
+                    <a href ="{% url 'market:login' %}"> Log in</a>
+                </div>
+            </nav>
+
+            <div class="px-6 py-6">
+            {% block content %} 
+            {% endblock %}
+
+        </body>
+            <footer>
+                <div class="center">
+                    <h3>About</h3>
+    
+                    <p>MAW was founded by its past Chairman Mr. P.R. Agarwal by setting up 
+                        An Engineering workshop in Biratnagar. It entered into agencies of automobile ancillary products like Goodyear Tyres, Mico Bosch, Mahale, Goetze, Talbros Gaskets etc. It took over the dealership of Ford Tractors in 1972 & Sold 164 Tractors in the 1st year of operation. It took the Dealership of Escorts/Rajdoot Motorcycles (Now YAMAHA) It promoted United Finance Ltd. As financing ARM of MAW. It started Engg. </P>
+                </div>
+    
+                <div class="center">
+                    <h1><a href="{% url 'market:contact' %}">Contact Us</a></h1>
+    
+                    <ul class="space-y-2">
+
+                        <li>Slk Riders pvt ltd</li>
+                        <li>Address : Charikot, dolakha</li>
+                        <li>Toll Free(Number): 1987665340
+                        <li>Email: sajilomarket@gmail.com</li>
+
+                        
+          
+                    </ul>
+                </div>
+            </footer>
+       
+     
+    </html>
